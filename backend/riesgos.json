@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "nombre": "Fallo en la seguridad del servidor",
+    "descripcion": "Posible brecha de seguridad en el servidor",
+    "pais": "Estados Unidos",
+    "probabilidad": "Alta",
+    "impacto": "Alto",
+    "proveedor": "Amazon Web Services",
+    "id_usuario": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Malware en la red",
+    "descripcion": "Posible infección de malware en la red",
+    "pais": "España",
+    "probabilidad": "Media",
+    "impacto": "Medio",
+    "proveedor": "ESET",
+    "id_usuario": 2
+  },
+  {
+    "id": 3,
+    "nombre": "Ataque de phishing",
+    "descripcion": "Intento de engaño a los usuarios para obtener información confidencial",
+    "pais": "Francia",
+    "probabilidad": "Alta",
+    "impacto": "Medio",
+    "proveedor": "Symantec",
+    "id_usuario": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Fallo en el sistema de autenticación",
+    "descripcion": "Problema con el sistema de autenticación de usuarios",
+    "pais": "Reino Unido",
+    "probabilidad": "Media",
+    "impacto": "Alto",
+    "proveedor": "Microsoft",
+    "id_usuario": 2
+  },
+  {
+    "id": 5,
+    "nombre": "Fuga de datos",
+    "descripcion": "Posible pérdida de información confidencial",
+    "pais": "Alemania",
+    "probabilidad": "Alta",
+    "impacto": "Alto",
+    "proveedor": "Oracle",
+    "id_usuario": 2
+  },
+  {
+    "id": 6,
+    "nombre": "Riesgo de ransomware",
+    "descripcion": "Posible ataque de ransomware a la red",
+    "pais": "Italia",
+    "probabilidad": "Alta",
+    "impacto": "Alto",
+    "proveedor": "Kaspersky",
+    "id_usuario": 2
+  },
+  {
+    "id": 7,
+    "nombre": "Error en la configuración de firewall",
+    "descripcion": "Problema en la configuración del firewall",
+    "pais": "Australia",
+    "probabilidad": "Media",
+    "impacto": "Medio",
+    "proveedor": "Cisco",
+    "id_usuario": 1
+  },
+  {
+    "id": 8,
+    "nombre": "Ataque de fuerza bruta",
+    "descripcion": "Intento de adivinar contraseñas mediante fuerza bruta",
+    "pais": "Canadá",
+    "probabilidad": "Alta",
+    "impacto": "Medio",
+    "proveedor": "Check Point",
+    "id_usuario": 1
+  },
+  {
+    "id": 9,
+    "nombre": "Vulnerabilidad de software",
+    "descripcion": "Posible vulnerabilidad en el software utilizado",
+    "pais": "Japón",
+    "probabilidad": "Alta",
+    "impacto": "Medio",
+    "proveedor": "Adobe",
+    "id_usuario": 1
+  },
+  {
+    "id": 10,
+    "nombre": "Problema de acceso no autorizado",
+    "descripcion": "Posible acceso no autorizado a sistemas o datos",
+    "pais": "Brasil",
+    "probabilidad": "Alta",
+    "impacto": "Alto",
+    "proveedor": "VMware",
+    "id_usuario": 1
+  }
+]
