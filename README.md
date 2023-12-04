@@ -1,71 +1,82 @@
-# Getting Started with Create React App
+Se requiere tener instalado la ultima versión de python y node.js preferiblemente 
+React: 
+Descargamos el codigo fuente y lo guardamos en un directorio 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ingresamos a la carpeta app_riesgos de la aplicación y abrimos la consola de comandos 
 
-## Available Scripts
+ejecutamos el siguiente comando: 
 
-In the project directory, you can run:
+npm install
 
-### `npm start`
+Flask:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ahora en una nueva ventana ingresamos a la carpeta llamada backend y abrimos la consola de comandos del CMD 
+donde ejecutamos los siguientes comandos en ese orden 
+py -3 -m venv .venv
+.venv\Scripts\activate
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Luego procedemos a instalar los siguientes complementos de flask y python  ejecutándolos en la consola de comandos en orden: 
 
-### `npm test`
+pip install Flask-SQLAlchemy psycopg2-binary
+pip install Flask-SQLAlchemy
+pip install Flask-JWT-Extended
+pip install Flask
+pip install Flask-Login
+pip install request
+pip install flask-cors
+pip install PyJWT
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Ahora procedemos a configurar la base de datos a la cual nos queremos conectar: 
+Abrimos el archivo app.py y configuramos la conexión de base de datos, usuario y contraseña. En mi caso utilizo postgrest
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Configuración de la URL de conexión a la base de datos en PostgreSQL
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123@localhost:5432/gestion_riesgos'
+![image](https://github.com/JohanFornari/riesgos/assets/25940586/17bd15be-ae27-4268-bd36-952d3904642e)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+guardamos y en la consola cmd ejecutamos el siguiente script para la creación de los usuarios y algunos riesgos
 
-### `npm run eject`
+![image](https://github.com/JohanFornari/riesgos/assets/25940586/40fd8249-7ae2-4757-926b-bf8736bdd8af)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+despues procedemos a subir el servidor de flask de la siguiente manera 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+en la consola de comandos ejecutamos el siguiente script
+python app.py
+![image](https://github.com/JohanFornari/riesgos/assets/25940586/3b3984a2-1828-4a2b-b5f2-caf69530603d)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ahora nos devolvemos a la consola de comandos inicial de react, y procedemos a ejecutar el siguiente comando para subir el servidor 
 
-## Learn More
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![image](https://github.com/JohanFornari/riesgos/assets/25940586/f94e0915-94cb-4c14-bfd1-cdb0b0331bd7)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+En este momento nuestra aplicación esta desplegada. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+para ejecutar las pruebas automaticas apagamos el servidor y ejecutamos el siguiente comando 
+pytest
+![image](https://github.com/JohanFornari/riesgos/assets/25940586/81097acb-ec3d-479c-b8c4-f6c3f99299b2)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Pagina de inicio del aplicativo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![image](https://github.com/JohanFornari/riesgos/assets/25940586/5aaa5de5-39ec-408a-96e0-e12ee1f594d1)
 
-### Advanced Configuration
+para acceder al servicio se tienen los usuarios por defecto: 
+usuario: admin 
+contraseña: admin123
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+usuario: user 
+contraseña: user123
 
-### Deployment
+se pueden crear riesgos 
+![image](https://github.com/JohanFornari/riesgos/assets/25940586/c7e101ef-c1e1-41a1-92f4-e3e49a0935cd)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+ver riesgos, modificar y eliminar
+![image](https://github.com/JohanFornari/riesgos/assets/25940586/0c366531-8186-4a87-ac46-ad25a96a3a19)
 
-### `npm run build` fails to minify
+![image](https://github.com/JohanFornari/riesgos/assets/25940586/a30997d1-e71f-45ff-9a01-c4e1a3c1306e)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# riesgos
