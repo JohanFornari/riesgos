@@ -7,7 +7,6 @@ app.app_context().push()
 # Se crean las tablas de base de datos apartir del modelo de forma automatica, se requiere que exista la base de datos
 db.create_all()
 
-
 # Crear un usuario con una contraseña segura, guardándola en un hash
 def create_user(username, password, es_admin=False):
     user = Usuario(username=username, es_admin=es_admin)
@@ -23,6 +22,7 @@ with open('riesgos.json', 'r') as file:
     data = json.load(file)
 
 for riesgo_data in data:
+    print(riesgo_data)
     nuevo_riesgo = Riesgo(
         id=riesgo_data['id'],
         nombre=riesgo_data['nombre'],
@@ -34,6 +34,10 @@ for riesgo_data in data:
         usuario_id=riesgo_data['id_usuario']
     )
     db.session.add(nuevo_riesgo)
+
+
+
+
 
 # Guarda los cambios
 db.session.commit()

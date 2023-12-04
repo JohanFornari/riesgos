@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 
 function Login() {
@@ -6,9 +6,21 @@ function Login() {
   const [password, setPassword] = useState('');
   const [showAlert, setShowAlert] = useState(false);
 
+  useEffect(() => {
+
+    axios.get('/api')
+      .then(response => {
+       console.log('hecho')
+       console.log(response.data)
+      })
+      .catch(error => {
+        console.error('Error ', error);
+      });
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     axios.post('/api/login', {
       username: username,
       password: password

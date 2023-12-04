@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import CrearRiesgo from './CrearRiesgo';
 import RiesgoList from './ListarRiesgos';
 import ActualizarRiesgo from './ActualizarRiesgo';
+import CrearUsuario from './CrearUsuario';
+import Salir from './Salir';
 import Menu from './Menu';
 
 function Dashboard() {
@@ -10,6 +12,8 @@ function Dashboard() {
   const handleMenuClick = (opcion) => {
     setOpcionMenu(opcion);
   };
+
+
 
   let contenido;
 
@@ -23,8 +27,17 @@ function Dashboard() {
     case 'ver':
       contenido = <RiesgoList />;
       break;
+    case 'crearUsuario':
+        contenido = <CrearUsuario />;
+        break;
+    case 'cerrar':
+        contenido = <Salir />;
+        break;
     default:
       contenido = null;
+    
+  
+  
   }
 
   return (

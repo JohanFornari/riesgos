@@ -30,7 +30,7 @@ function CrearRiesgo() {
     console.log('token react: ' + token)
     if (!token) {
       // Si el usuario no está autenticado, redirigir a la página de inicio de sesión
-      window.location.href = '/'; // Cambia la URL según tu configuración
+      window.location.href = '#/'; // Cambia la URL según tu configuración
       return;
     }
     const config = {

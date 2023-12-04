@@ -27,14 +27,14 @@ def test_listar_riesgos():
     assert response.status_code == 200
 
 def test_crear_riesgo():
-    token = login('user', 'user123')
+    token = login('admin', 'admin123')
     response = client.post('/api/riesgos', json={
-        'nombre': 'Fallo en la seguridad del servidor',
-        'descripcion': 'Posible brecha de seguridad en el servidor',
-        'probabilidad': 'Alta',
-        'proveedor': 'Amazon Web Services',
-        'impacto': 'Alto',
-        'pais': 'Albania'
+        'nombre': 'Fallo en la seguridad del servidor test',
+        'descripcion': 'Posible brecha de seguridad en el servidor test',
+        'probabilidad': 'Alta test',
+        'proveedor': 'Amazon Web Services test',
+        'impacto': 'Alto test',
+        'pais': 'Albania test'
     }, headers={'Authorization': f'Bearer {token}'})
     assert response.status_code == 200
 
@@ -42,7 +42,7 @@ def test_crear_riesgo():
 def test_actualizar_riesgo():
     token = login('admin', 'admin123')
 
-    response = client.put(f'/api/riesgos/11', json={
+    response = client.put(f'/api/riesgos/8', json={
         'nombre': 'Nuevo Nombre del Riesgo',
         'descripcion': 'Nueva descripción del riesgo',
         'probabilidad': 'Alta',
@@ -55,7 +55,7 @@ def test_actualizar_riesgo():
 # hay que ingresar el id del riesgo a actualizar
 def test_eliminar_riesgo():
     token = login('admin', 'admin123')
-    response = client.delete(f'/api/riesgos/11', headers={'Authorization': f'Bearer {token}'})
+    response = client.delete(f'/api/riesgos/8', headers={'Authorization': f'Bearer {token}'})
     assert response.status_code == 200
 
 
